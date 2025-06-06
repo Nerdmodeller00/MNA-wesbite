@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ground Combat Infantry | MNA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Orbitron', sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      color: white;
+      position: relative;
+      /* background image with overlay handled by ::before */
+      z-index: 0;
+    }
+
+    /* Full page background image with dark overlay */
+    body::before {
+      content: "";
+      position: fixed; /* fixed so it stays on scroll */
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: url('https://cdn.discordapp.com/attachments/1361781395545915674/1380217133480411246/mna2.png?ex=6843bb9f&is=68426a1f&hm=7f59d4b4c1b5dbc97bdaa0d86152cddf0a68995e7f5e387b4bf28c7b6c49d1e4&');
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.25);
+      z-index: -1; /* behind everything */
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 2rem 1rem;
+      border-bottom: 2px solid #184d2d;
+      max-width: 900px;
+      margin: 2rem auto 2rem auto;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
+      z-index: 1;
+      position: relative;
+      text-align: center;
+    }
+
+    header img {
+      display: block;
+      margin: 0 auto 1rem auto;
+      width: 144px; /* w-36 */
+      filter: drop-shadow(0 0 6px rgba(0, 255, 0, 0.7));
+      user-select: none;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      user-select: none;
+    }
+
+    header p {
+      color: #ccc;
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    .detailed-info {
+      background-color: rgba(0, 0, 0, 0.7);
+      border: 1px solid #155724;
+      border-radius: 12px;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1.5rem 2rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #d4d4d4;
+      position: relative;
+      z-index: 1;
+    }
+
+    section {
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .unit-card {
+      position: relative;
+      background-color: #0f2c11;
+      border: 1px solid #184d2d;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      transition: background-color 0.3s;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      overflow: hidden;
+      user-select: none;
+      z-index: 1;
+    }
+
+    .unit-card:hover {
+      background-color: #184d2d;
+    }
+
+    .unit-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+      text-align: center;
+      z-index: 20;
+    }
+
+    .unit-info {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.9);
+      color: white;
+      padding: 1rem 1.25rem;
+      border-radius: 1rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 0.875rem;
+      line-height: 1.4;
+      z-index: 30;
+      user-select: text;
+    }
+
+    .unit-card:hover .unit-info {
+      opacity: 1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem 0;
+      border-top: 1px solid #184d2d;
+      color: #999;
+      font-size: 0.875rem;
+      max-width: 900px;
+      margin: 3rem auto 2rem auto;
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="https://cdn.discordapp.com/attachments/1361781395545915674/1380256548806332446/GroundCombatInfantry.png?ex=6843e055&is=68428ed5&hm=8aeeb61a2654550966cec9dfb12d7ea606f9e28ae720e4b1197009565f10e484&" alt="GCI Logo" />
+    <h1>GROUND COMBAT INFANTRY (GCI)</h1>
+    <p>
+      The core of our military force. Trained to seize and hold terrain, engage enemy units, and dominate in all environments — from urban alleys to desert dunes.
+    </p>
+  </header>
+
+  <section class="detailed-info">
+    <h2 class="text-3xl font-bold mb-4 text-white text-center">Detailed Information About GCI</h2>
+    <p>
+      The Ground Combat Infantry (GCI) represents the backbone of our armed forces. These soldiers are rigorously trained in various combat environments to maintain operational superiority.
+      Their training focuses on endurance, tactical maneuvers, and versatility, allowing them to operate effectively in urban, jungle, desert, and mountainous terrains.
+      GCI units specialize in rapid deployment and adaptability, often spearheading offensive operations and holding strategic points under extreme pressure.
+    </p>
+    <p class="mt-4">
+      GCI's integration of cutting-edge technology with traditional infantry tactics ensures that our forces maintain a tactical edge against evolving threats.
+      Emphasis on teamwork, discipline, and leadership prepares GCI soldiers to execute complex missions, including reconnaissance, assault, and defensive operations.
+      Their commitment to excellence exemplifies the core values of courage, honor, and resilience.
+    </p>
+  </section>
+
+  <section class="py-10 px-6">
+    <h2 class="text-2xl font-bold mb-4 text-white">Propaganda & Action</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Join_the_Army%21_%281914%29_-_Art.IWMART5166.jpg" alt="Propaganda 1" class="rounded shadow-lg border border-green-900" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Uncle_Sam_%28pointing_finger%29.jpg" alt="Propaganda 2" class="rounded shadow-lg border border-green-900" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/66/WW2_British_Army_Recruiting_Poster.jpg" alt="Propaganda 3" class="rounded shadow-lg border border-green-900" />
+    </div>
+  </section>
+
+  <section class="py-12 px-6">
+    <h2 class="text-3xl font-bold mb-8 text-white text-center">Divisional Units</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div class="unit-card">
+        <h3>1st Assault Battalion</h3>
+        <div class="unit-info">
+          Breaches enemy defenses, leads charges, and specializes in close-quarters suppression and shock tactics.
+        </div>
+      </div>
+
+      <div class="unit-card">
+        <h3>2nd Recon Scouts</h3>
+        <div class="unit-info">
+          Stealth specialists who operate ahead of the main force, gathering intel and coordinating ambushes.
+        </div>
+      </div>
+
+      <div class="unit-card">
+        <h3>3rd Heavy Weapons Team</h3>
+        <div class="unit-info">
+          Provides anti-vehicle support and area denial using heavy firepower and static defenses.
+        </div>
+      </div>
+
+      <div class="unit-card">
+        <h3>4th Urban Combat Division</h3>
+        <div class="unit-info">
+          Experts in building-to-building combat, breaching, and tunnel warfare. Operate best in confined and chaotic environments.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Myriad National Army | Ground Combat Infantry Division
+  </footer>
+
+</body>
+</html>
